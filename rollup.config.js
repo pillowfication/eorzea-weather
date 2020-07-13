@@ -1,37 +1,36 @@
-import * as path from 'path';
-import babel from 'rollup-plugin-babel';
-import json from 'rollup-plugin-json';
-import { uglify } from 'rollup-plugin-uglify';
-import pkg from './package.json';
+import * as path from 'path'
+import babel from 'rollup-plugin-babel'
+import json from 'rollup-plugin-json'
+import { uglify } from 'rollup-plugin-uglify'
+import pkg from './package.json'
 
 const createConfig = ({ output, plugins = [] }) => ({
   input: path.resolve(__dirname, 'src', 'index.js'),
   output,
   plugins: [
     json({
-      preferConst: true,
+      preferConst: true
     }),
-    ...plugins,
-  ],
-  preferConst: output.format === 'es',
-});
+    ...plugins
+  ]
+})
 
 export default [
   createConfig({
     output: {
       file: path.resolve(__dirname, pkg.main),
       format: 'umd',
-      name: 'EorzeaWeather',
+      name: 'EorzeaWeather'
     },
     plugins: [
       babel(),
-      uglify(),
-    ],
+      uglify()
+    ]
   }),
   createConfig({
     output: {
       file: path.resolve(__dirname, pkg.module),
-      format: 'es',
-    },
-  }),
-];
+      format: 'es'
+    }
+  })
+]

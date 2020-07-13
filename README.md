@@ -1,32 +1,19 @@
-# eorzea-weather [![CircleCI](https://circleci.com/gh/flowercartelet/eorzea-weather.svg?style=shield)](https://circleci.com/gh/flowercartelet/eorzea-weather)
+# eorzea-weather
 
-Weather forecast for Eorzea.
-
-## Install
-
-```console
-$ yarn install eorzea-weather
-```
-
-or
-
-```console
-$ npm install --save eorzea-weather
-```
+Weather forecast for Eorzea. Forked from https://github.com/flowercartelet/eorzea-weather.
 
 ## Usage
 
-```javascript
-const EorzeaWeather = require('eorzea-weather');
+```js
+import EorzeaWeather from '@pillowfication/eorzea-weather'
 
-EorzeaWeather.getWeather(EorzeaWeather.ZONE_EUREKA_ANEMOS, new Date()); // Gales
+const eorzeaWeather = new EorzeaWeather({ locale: 'en' })
+eorzeaWeather.getWeather(EorzeaWeather.ZONE_EUREKA_ANEMOS, Date.now()) // false
 ```
 
-## License
+**Differences**
 
-[MIT](LICENSE)
-
-```plain
-FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
-FINAL FANTASY XIV © 2010 - 2018 SQUARE ENIX CO., LTD. All Rights Reserved.
-```
+ - Functions take numerical dates (e.g. `Date.now()`) instead of Date objects.
+ - Regions have been added.
+ - `EorzeaWeather` constructor no longer takes a `zoneId`. The `zoneId` must be provided in `getWeather()` calls.
+ - `_getWeather()` added that returns a `weatherId` instead of the translated weather string.

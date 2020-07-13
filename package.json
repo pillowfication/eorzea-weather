@@ -1,11 +1,11 @@
 {
   "author": {
-    "email": "flowercartelet@gmail.com",
-    "name": "Lily Cartelet",
-    "url": "https://flowercartelet.com/"
+    "name": "Markus Tran",
+    "email": "thebluepillow@gmail.com",
+    "url": "http://pillowfication.com"
   },
   "bugs": {
-    "url": "https://github.com/flowercartelet/eorzea-weather/issues"
+    "url": "https://github.com/pillowfication/eorzea-weather/issues"
   },
   "dependencies": {},
   "description": "Weather forecast for Eorzea.",
@@ -15,16 +15,13 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.0.1",
     "cross-env": "^7.0.2",
-    "eslint": "^6.2.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.10.0",
-    "jest": "^26.0.1",
     "npm-run-all": "^4.1.2",
     "rimraf": "^3.0.0",
     "rollup": "^1.16.7",
     "rollup-plugin-babel": "^v4.4.0",
     "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-uglify": "^6.0.2"
+    "rollup-plugin-uglify": "^6.0.2",
+    "standard": "^14.3.4"
   },
   "keywords": [
     "Eorzea",
@@ -32,21 +29,20 @@
     "FINAL FANTASY XIV",
     "Weather"
   ],
-  "homepage": "https://github.com/flowercartelet/eorzea-weather",
+  "homepage": "https://github.com/pillowfication/eorzea-weather",
   "license": "MIT",
   "main": "./dist/eorzea-weather.min.js",
   "module": "./lib/eorzea-weather.js",
-  "name": "eorzea-weather",
+  "name": "@pillowfication/eorzea-weather",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flowercartelet/eorzea-weather.git"
+    "url": "https://github.com/pillowfication/eorzea-weather.git"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
     "clean": "rimraf dist lib",
-    "lint": "eslint .",
-    "prepublishOnly": "npm-run-all lint test clean build",
-    "test": "cross-env NODE_ENV=test jest"
+    "prepublishOnly": "npm-run-all test clean build",
+    "test": "standard"
   },
   "version": "2.3.2"
 }
