@@ -18,7 +18,7 @@ export default class EorzeaWeather {
   getWeather (zoneId, date = Date.now()) {
     EorzeaWeather.validateZone(zoneId)
     const weatherId = this._getWeather(zoneId, date)
-    return EorzeaWeather.translateWeather(weatherId, this.locale)
+    return this.translateWeather(weatherId)
   }
 
   _getWeather (zoneId, date = Date.now()) {
@@ -28,6 +28,18 @@ export default class EorzeaWeather {
         return weather
       }
     }
+  }
+
+  translateWeather (weatherId) {
+    return locales[this.locale][`weathers.${weatherId}`]
+  }
+
+  translateRegion (regionId) {
+    return locales[this.locale][`regions.${regionId}`]
+  }
+
+  translateZone (zoneId) {
+    return locales[this.locale][`zones.${zoneId}`]
   }
 
   static validateRegion (regionId) {
@@ -43,7 +55,6 @@ export default class EorzeaWeather {
   }
 
   static translateWeather (weatherId, locale) {
-    console.log(weatherId, locale)
     return locales[locale][`weathers.${weatherId}`]
   }
 
