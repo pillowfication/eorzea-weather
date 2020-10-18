@@ -30,6 +30,10 @@ export default class EorzeaWeather {
     }
   }
 
+  getWeatherChance (date = Date.now()) {
+    return calculateForecastTarget(date)
+  }
+
   translateWeather (weatherId) {
     return locales[this.locale][`weathers.${weatherId}`]
   }
