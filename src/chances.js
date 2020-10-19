@@ -313,6 +313,14 @@ export const theAzimSteppe = [
   { c: 100, w: WEATHER_CLEAR_SKIES }
 ]
 
+export const theBozjanSouthernFront = [
+  { c: 50, w: WEATHER_FAIR_SKIES },
+  { c: 65, w: WEATHER_RAIN },
+  { c: 80, w: WEATHER_WIND },
+  { c: 90, w: WEATHER_THUNDER },
+  { c: 100, w: WEATHER_DUST_STORMS }
+]
+
 export const theChurningMists = [
   { c: 10, w: WEATHER_CLOUDS },
   { c: 20, w: WEATHER_GALES },
