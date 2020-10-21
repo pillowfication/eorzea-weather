@@ -315,8 +315,8 @@ export const theAzimSteppe = [
 
 export const theBozjanSouthernFront = [
   { c: 55, w: WEATHER_FAIR_SKIES },
-  { c: 65, w: WEATHER_RAIN },
-  { c: 80, w: WEATHER_WIND },
+  { c: 60, w: WEATHER_RAIN },
+  { c: 75, w: WEATHER_WIND },
   { c: 90, w: WEATHER_THUNDER },
   { c: 100, w: WEATHER_DUST_STORMS }
 ]
